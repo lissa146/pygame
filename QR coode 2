@@ -1,0 +1,16 @@
+import qrcode
+from PIL import Image
+
+qr = qrcode.QRCode(
+    version=35,
+    error_correction=qrcode.constants.ERROR_CORRECT_L,
+    box_size=30,
+    border=10,
+)
+
+qr.add_data("jayden smeels like butt")
+qr.make(fit=True)
+
+img = qr.make_image(fill= 'black', back_color='green')
+
+img.save("qr_code_output.jpg")
